@@ -1,6 +1,6 @@
 var fs = require('fs');
 var dirName = process.argv[2];
-if (fs.existsSync(dirName)) {
+if (fs.existsSync("./" +dirName)) {
     console.log("error: dir exists");
 }else{
     fs.mkdirSync("./" + dirName);
