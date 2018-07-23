@@ -1,0 +1,30 @@
+#yinyang{
+    border: 2px solid black;
+    width: 96px;
+    height: 192px;
+    border-radius: 100%;
+    border-left-width: 100px;
+    position:relative
+}
+#yinyang:before{
+    content:"";
+    border:36px solid black;
+    width:24px;
+    height: 24px;
+    border-radius:100%;
+    background-color: white;
+    position:absolute;
+    top: 0%;
+    right: 50%;
+}
+#yinyang:after{
+    content:"";
+    border:36px solid white;
+    width:24px;
+    height: 24px;
+    border-radius:100%;
+    background-color: black;
+    position:absolute;
+    bottom: 0%;
+    right: 50%;
+}
