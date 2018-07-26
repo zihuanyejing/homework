@@ -1,7 +1,12 @@
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 body{
     margin:0;
-    background: #000;
-    color: #fff;
+    background: #F0EFED;
 }
 a{
     text-decoration: none;
@@ -9,6 +14,7 @@ a{
 .topNavbar > nav > ul{
     list-style: none;
     margin:0;
+    margin-right:32px;
 }
 
 .topNavbar > nav > ul > li{
@@ -56,4 +62,109 @@ a{
 }
 .topNavbar{
     margin:20px 16px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+.banner{
+    background-image: url("./image/back.jpg");
+    height:515px;
+    background-position: center center;
+    background-size: cover;
+    
+}
+.banner .mask{
+    height:515px;
+    background-color: rgba(0,0,0,0.7);
+}
+.card{
+    max-width: 940px;
+    height:525px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+.welcome{
+    background-color: #FC5D5A;
+    color:#FEFFFF;
+    padding:5px 16px;
+    position:relative;
+    display:inline-block;
+    line-height: 22px;
+}
+.welcome .triangle{
+    width: 0px;
+    border: 10px solid transparent;
+    display: block;
+    border-left-color: #FC5D5A;
+    border-top-width: 0px;
+    position:absolute;
+    left:4px;
+    top:100%;
+}
+.picture{
+    float:left;
+}
+.picAndText{
+    padding:55px 50px 45px 50px;
+}
+.text{
+    float:left;
+    margin:0;
+    margin-left:65px;
+    width:470px;
+}
+.card .text h1{
+    margin: 28px 0 0 0;
+    
+}
+.card .text p{
+    margin:0;
+    padding:3px 0;
+}
+.card .text hr{
+    margin:20px 0px;
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+}
+.card .text dt,.card .text dd{
+    float:left;
+    display:block;
+}
+.card .text dt{
+    width:30%;
+    margin:0;
+    padding:5px 0;
+    font-weight: bolder;
+}
+.card .text dd{
+    width:70%;
+    margin:0;
+    padding:5px 0;
+    color: #9D9EA0;
+}
+.card .media{
+    background: #FC5D5A;
+    text-align: center;
+}
+.card .media svg{
+    width:30px;
+    height:30px;
+    fill:white;
+    vertical-align:top;
+
+}
+.card .media a{
+    width:40px;
+    line-height:30px;
+    display: inline-block;
+    margin:16px;
+    padding:10px 5px;
+}
+.card .media a:hover{
+    border-radius: 100%;
+    border:0px solid transparent;
+    background: #CF5D5F;
+    
 }
