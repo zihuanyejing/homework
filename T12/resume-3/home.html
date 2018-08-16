@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小小紫幻の简历</title>
+    <link rel="stylesheet" href="./home.css">
+    <script src="//at.alicdn.com/t/font_765437_lyba656ynt.js"></script>
+</head>
+<body>
+ <div class="topNavbar clearfix">
+     <a href="#" class="logo">
+         <span class="rs">RS</span><span class="rt">card</span>
+     </a>
+     <nav>
+         <ul class="clearfix">
+             <li><a href="#">关于</a></li>
+             <li><a href="#">技能</a></li>
+             <li><a href="#">作品</a></li>
+             <li><a href="#">博客</a></li>
+             <li><a href="#">日历</a></li>
+             <li><a href="#">联系方式</a></li>
+             <li><a href="#">其他</a></li>
+         </ul>
+     </nav> 
+ </div>
+ <div class="banner">
+     <div class="mask"></div>
+ </div>
+ <main>
+     <div class="card">
+         <div class="picAndText clearfix">
+             <div class="picture">
+                    <img src="./image/touxiang.png" width="299" height="347" alt="生活照">
+             </div>
+             <div class="text">
+                 <span class="welcome">Hello
+                     <span class="triangle"></span>  
+                 </span>
+                 <h1>小小紫幻</h1>
+                 <p>入行小半年尚在努力学习中的前端小小程序媛</p>
+                 <hr>
+                 <dl class="clearfix">
+                     <dt>年龄</dt>
+                     <dd>18</dd>
+                     <dt>所在城市</dt>
+                     <dd>帝都</dd>
+                     <dt>邮箱</dt>
+                     <dd>zizi@123.com</dd>
+                     <dt>手机</dt>
+                     <dd>18712345678</dd>
+                 </dl>
+             </div>
+         </div>
+         <footer class="media">
+                <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                </a>
+                <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinxiangbiji"></use>
+                        </svg>
+                </a> 
+                <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhihu0"></use>
+                        </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tubiao215"></use>
+                    </svg>
+                </a>  
+         </footer>
+     </div>
+     <a href="./files/resume.pdf" class="button" download>下载PDF简历</a>
+     <p class="selfIntro">大家好，我叫小小紫幻，本硕就读于中国科学技术大学电子工程与信息科学系，专业分别为电子信息工程与电子与通信工程。现任初级前端工程师。</p>
+ </main>
+
+ <section class="skills">
+     <h2>技能</h2>
+     <ol class="clearfix">
+         <li>
+             <h3>html &amp css</h3>
+             <div class="progressBar">
+                 <div class="progress"></div>
+             </div>
+        </li>
+         <li>
+             <h3>Javascript</h3>
+             <div class="progressBar">
+                   <div class="progress"></div>
+            </div>
+         </li>
+         <li>
+            <h3>kissy &amp bui</h3>
+            <div class="progressBar">
+                   <div class="progress"></div>
+            </div>
+         </li>
+         <li>
+            <h3>Angular 5</h3>
+            <div class="progressBar">
+                    <div class="progress"></div>
+            </div>
+         </li>
+     </ol>
+ </section>
+ <section class="portfolio">
+     <h2>作品集</h2>
+     <nav>
+        <ol class="clearfix">
+            <li id="portfolio1">所有</li>
+            <li id="portfolio2">原生</li>
+            <li id="portfolio3">框架</li>
+        </ol>
+        <div id=portfolioBar class="portfolioNavBar state-1">
+            <div class="barInner"></div>
+        </div>
+     </nav>  
+     <div class="portfolioImg clearfix">
+            <div class="bigImg"><img src="./image/1.jpg" alt="作品集1"></div>
+            <div class="smallImg">
+                <div><img src="./image/2.jpg" alt="作品集2"></div>
+                <div id="smallImg3"><img src="./image/3.jpg" alt="作品集3"></div>
+            </div>
+    </div>
+ </section>
+
+ <script>
+     portfolio1.onclick = function(){
+        portfolioBar.className = "portfolioNavBar state-1";
+     }
+     portfolio2.onclick = function(){
+        portfolioBar.className = "portfolioNavBar state-2";
+     }
+     portfolio3.onclick = function(){
+        portfolioBar.className = "portfolioNavBar state-3";
+     }
+ </script>
+
+    
+</body>
+</html>
