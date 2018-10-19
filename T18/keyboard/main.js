@@ -15,7 +15,8 @@ var keys={
     M: "mcdonalds.com",
     V: "v.qq.com",
     X: "xiedaimala.com",
-    Y: "yinxiang.com"
+    Y: "yinxiang.com",
+    S: "store.steampowered.com"
  };
  if(localStorage.getItem('web')){
     var website = JSON.parse(localStorage.getItem('web'));
