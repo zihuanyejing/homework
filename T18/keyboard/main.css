@@ -1,0 +1,105 @@
+*{
+    margin:0;
+    padding:0;
+ }
+ body{
+    background: grey url(./img/7.jpeg) no-repeat top center; 
+    background-size: cover;
+    height: 95vh;
+}
+ #keyboard{
+    margin-top: 100px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 30px;
+    width: 990px;
+    height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: -1px 5px 11px 4px rgba(255,255,255,0.5);
+    
+ }
+ #keyboard .rows{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+ 
+ 
+ }
+ #keyboard .rows .kbd{
+    display: inline-block;
+    border: 1px solid #373737;
+    width:50px;
+    height:40px;
+    margin:8px 7px;
+    background: linear-gradient(to bottom,#292929 0%,#111111 100%);
+    color: #c5c5c5;
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px #1a1b1c,0 0 0 2px #1f2020,0 3px 0 2px #080808;
+    font-size: 16px;
+    font-family: Helvetica;
+    position:relative;
+ }
+ #keyboard .rows:nth-child(1) .kbd:nth-child(1){
+    width:60px;
+ }
+ #keyboard .rows:nth-child(2) .kbd:nth-child(1){
+    width:80px;
+ }
+ #keyboard .rows:nth-child(2) .kbd:last-child{
+    width:98px;
+ }
+ #keyboard .rows:nth-child(3) .kbd:first-child{
+    width:123px;
+ }
+ #keyboard .rows:nth-child(3) .kbd:last-child{
+    width:123px;
+ }
+ #keyboard .rows:nth-child(4) .kbd:first-child{
+    width:80px;
+ }
+ #keyboard .rows:nth-child(4) .kbd:last-child{
+    width:80px;
+ }
+ #keyboard .rows:nth-child(4) .kbd:nth-child(4){
+    width:400px;
+ }
+ .rows .kbd .text{
+    position: absolute;
+    top:3px;
+    left:5px;
+ }
+ .rows .kbd .button{
+    position: absolute;
+    bottom:2px;
+    right:2px;
+    display:none
+ }
+ .rows .kbd:hover > .button{
+    background-color: rgba(0,0,0,0);
+    color:#c5c5c5;
+    border:0px solid black;
+    display:inline-block;
+    cursor: pointer;
+ 
+ } 
+ .rows .kbd img{
+    position: absolute;
+    bottom:1px;
+    left:5px;
+    width:15px;
+    height:15px;
+ }
+ #keyboard .rows:nth-child(1) .kbd:nth-child(1),#keyboard .rows:nth-child(2) .kbd:nth-child(1),#keyboard .rows:nth-child(2) .kbd:last-child,#keyboard .rows:nth-child(3) .kbd:nth-child(1),#keyboard .rows:nth-child(3) .kbd:last-child{
+    background:linear-gradient(to bottom, #4c4c4c 0%,#595959 9%,#595959 21%,#595959 46%,#595959 58%,#595959 100%,#000000 100%,#131313 100%,#595959 100%);
+    box-shadow: 0 0 0 1px #4c4c4c,0 0 0 2px #595959,0 3px 0 2px #595959;
+ }
+ #keyboard .rows:nth-child(1):hover .kbd:nth-child(1) >.button,#keyboard .rows:nth-child(2):hover .kbd:nth-child(1) > .button, #keyboard .rows:nth-child(2):hover .kbd:last-child > .button, #keyboard .rows:nth-child(3):hover .kbd:nth-child(1)>.button,#keyboard .rows:nth-child(3):hover .kbd:last-child>.button{
+     display: none;
+ }
+ #keyboard .rows:nth-child(4) .kbd:nth-child(1),#keyboard .rows:nth-child(4) .kbd:nth-child(2),#keyboard .rows:nth-child(4) .kbd:nth-child(3),#keyboard .rows:nth-child(4) .kbd:nth-child(5),#keyboard .rows:nth-child(4) .kbd:nth-child(6),#keyboard .rows:nth-child(4) .kbd:nth-child(7),#keyboard .rows:nth-child(4) .kbd:nth-child(8){
+    background:linear-gradient(to bottom, #4c4c4c 0%,#595959 9%,#595959 21%,#595959 46%,#595959 58%,#595959 100%,#000000 100%,#131313 100%,#595959 100%);
+    box-shadow: 0 0 0 1px #4c4c4c,0 0 0 2px #595959,0 3px 0 2px #595959;
+ }
+ #keyboard .rows:nth-child(4):hover .kbd:nth-child(1) >.button,#keyboard .rows:nth-child(4):hover .kbd:nth-child(2) >.button,#keyboard .rows:nth-child(4):hover .kbd:nth-child(3) >.button,#keyboard .rows:nth-child(4):hover .kbd:nth-child(5) >.button,#keyboard .rows:nth-child(4):hover .kbd:nth-child(6) >.button,#keyboard .rows:nth-child(4):hover .kbd:nth-child(7) >.button,#keyboard .rows:nth-child(4):hover .kbd:nth-child(8) >.button{
+    display: none;
+ }
