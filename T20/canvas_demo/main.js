@@ -8,7 +8,13 @@ var using = false;//是否为画笔模式
 var eraser = false;//是否为橡皮擦模式
 var colorCurrent = "black";
 var lineCurrent = 2;
-bindMouseEvent();
+if(document.body.ontouchstart!==undefined){
+    bindTouchEvent();
+}else{
+    bindMouseEvent();
+}
+bindClickEvent();
+
 
 
 //两点之间画线
@@ -22,7 +28,7 @@ function drawLine(start,end){
     context.closePath();
 }
 
-//绑定鼠标事件
+//绑定鼠标按下与放开事件
 function bindMouseEvent(){
     var lastPoint = {
         x:undefined,
@@ -60,59 +66,103 @@ function bindMouseEvent(){
    document.onmouseup = function(){
        using = false;
    }
-   brush.onclick = function(){
-       eraser = false;
-       brush.classList.add("selected");
-       eraserId.classList.remove("selected");
+   
+}
+//绑定鼠标点击事件
+function bindClickEvent(){
+    brush.onclick = function(){
+        eraser = false;
+        brush.classList.add("selected");
+        eraserId.classList.remove("selected");
+    }
+    eraserId.onclick = function(){
+        eraser = true;
+        eraserId.classList.add("selected");
+        brush.classList.remove("selected");
+    }
+    red.onclick = function(){
+        colorCurrent = "red";
+        red.classList.add("colorselected");
+        blue.classList.remove("colorselected");
+        black.classList.remove("colorselected");
+    }
+    blue.onclick = function(){
+        colorCurrent = "blue";
+        blue.classList.add("colorselected");
+        red.classList.remove("colorselected");
+        black.classList.remove("colorselected");
    }
-   eraserId.onclick = function(){
-       eraser = true;
-       eraserId.classList.add("selected");
-       brush.classList.remove("selected");
-   }
-   red.onclick = function(){
-       colorCurrent = "red";
-       red.classList.add("colorselected");
-       blue.classList.remove("colorselected");
-       black.classList.remove("colorselected");
-   }
-   blue.onclick = function(){
-       colorCurrent = "blue";
-       blue.classList.add("colorselected");
+   black.onclick = function(){
+       colorCurrent = "black";
+       black.classList.add("colorselected");
        red.classList.remove("colorselected");
-       black.classList.remove("colorselected");
-  }
-  black.onclick = function(){
-      colorCurrent = "black";
-      black.classList.add("colorselected");
-      red.classList.remove("colorselected");
-      blue.classList.remove("colorselected");
-  }
-  line1.onclick = function(){
-      lineCurrent = 2;
-      line1.classList.add("lineselected");
-      line2.classList.remove("lineselected");
-      line3.classList.remove("lineselected");
-  } 
-  line2.onclick = function(){
-      lineCurrent = 4;
-      line2.classList.add("lineselected");
-      line1.classList.remove("lineselected");
-      line3.classList.remove("lineselected");
-  }  
-  line3.onclick = function(){
-      lineCurrent = 6;
-      line3.classList.add("lineselected");
-      line1.classList.remove("lineselected");
-      line2.classList.remove("lineselected");
-  } 
-  download.onclick = function(){
-      var url = canvas.toDataURL("/image/png");
-      var a =document.createElement('a');
-      test.appendChild(a)
-      a.href = url;
-      a.download = "我的画作";
-      a.target = "_blank";
-      a.click();
-  }
+       blue.classList.remove("colorselected");
+   }
+   line1.onclick = function(){
+       lineCurrent = 2;
+       line1.classList.add("lineselected");
+       line2.classList.remove("lineselected");
+       line3.classList.remove("lineselected");
+   } 
+   line2.onclick = function(){
+       lineCurrent = 4;
+       line2.classList.add("lineselected");
+       line1.classList.remove("lineselected");
+       line3.classList.remove("lineselected");
+   }  
+   line3.onclick = function(){
+       lineCurrent = 6;
+       line3.classList.add("lineselected");
+       line1.classList.remove("lineselected");
+       line2.classList.remove("lineselected");
+   } 
+   download.onclick = function(){
+       var url = canvas.toDataURL("/image/png");
+       var a =document.createElement('a');
+       test.appendChild(a)
+       a.href = url;
+       a.download = "我的画作";
+       a.target = "_blank";
+       a.click();
+   }
+}
+// 绑定手机触摸事件
+function bindTouchEvent(){
+    var lastPoint = {
+        x:undefined,
+        y:undefined
+    }
+   document.ontouchstart = function(location){
+       using = true;
+       console.log(location);
+       var x = location.targetTouches[0].clientX;
+       var y = location.targetTouches[0].clientY;
+       if(eraser){
+           context.clearRect(x-5,y-5,10,10);
+       }else{
+           lastPoint.x = x;
+           lastPoint.y = y;
+       }
+   }
+   document.ontouchmove = function(location){
+       var x = location.targetTouches[0].clientX;
+       var y = location.targetTouches[0].clientY;
+       if(!using){
+           return;
+       }
+       if(eraser){
+           context.clearRect(x-5,y-5,10,10);
+       }else{
+           var newPoint = {
+               x:x,
+               y:y
+           }
+           drawLine(lastPoint,newPoint);
+           lastPoint.x = newPoint.x;
+           lastPoint.y = newPoint.y;
+       }
+   }
+   document.ontouchend = function(){
+       using = false;
+   }
 }
