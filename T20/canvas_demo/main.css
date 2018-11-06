@@ -1,0 +1,85 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+canvas {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left:0px;
+ }
+.icon {
+    width: 2em; height: 2em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+ #brush{
+    position: fixed;
+    top:5px;
+    left:10px;
+ }
+ #eraserId{
+    position: fixed;
+    top:5px;
+    left:50px;
+ }
+ .selected{
+    width: 2.3em; height: 2.3em;
+    fill: brown
+ }
+ .color{
+     position: fixed;
+     top:60px;
+     left: 10px;
+ }
+ .color span{
+     display: block;
+     width: 30px;
+     height:30px;
+     border:1px solid transparent;
+     margin-top:10px;
+     border-radius: 20px;
+     
+ }
+ .red{
+     background-color: red;
+ }
+ .blue{
+    background-color: blue;
+ }
+ .black{
+    background-color: black;
+ }
+ .color .colorselected{
+    box-shadow: 0px 1px 3px 3px rgba(160,142,163,1);
+}
+.lines{
+    position: fixed;
+    top:200px;
+    left: 10px;
+}
+.lines span{
+    display: block;
+    width: 30px;
+    height:15px;
+    margin-top:5px; 
+}
+.line1{
+    border-bottom:2px solid gray;
+}
+.line2{
+    border-bottom:4px solid gray;
+}
+.line3{
+    border-bottom:6px solid gray;
+}
+.lines .lineselected{
+    border-bottom-color:  black;
+ }
+ #download{
+     position: fixed;
+     top:5px;
+     right:10px;
+     cursor: pointer;
+ }

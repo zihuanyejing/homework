@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>draw a draw</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <svg id="brush" class="icon selected" aria-hidden="true">
+            <use xlink:href="#icon-pen"></use>
+    </svg>
+    <svg id="eraserId" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-eraser"></use>
+    </svg>
+    <div class="color">
+        <span class="red" id="red"></span>
+        <span class="blue" id="blue"></span>
+        <span class="black colorselected" id="black"></span>
+    </div>
+    <div class="lines">
+        <span class="line1 lineselected" id="line1"></span>
+        <span class="line2" id="line2"></span>
+        <span class="line3" id="line3"></span>
+    </div>
+    <svg id="download" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-download"></use>
+    </svg>
+    <div id="test"></div>
+
+    <script src="./main.js"></script>
+    <script src="//at.alicdn.com/t/font_906094_wv8sfaf3uc8.js"></script>
+</body>
+</html>
