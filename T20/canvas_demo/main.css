@@ -22,11 +22,17 @@ canvas {
  #eraserId{
     position: fixed;
     top:5px;
-    left:50px;
+    left:55px;
+ }
+ #deleteId{
+    position: fixed;
+    top:5px;
+    left:100px;
  }
  .selected{
-    width: 2.3em; height: 2.3em;
-    fill: brown
+    fill: brown;
+    transform: scale(1.2);
+    transition: all 0.1s;
  }
  .color{
      position: fixed;
@@ -53,6 +59,8 @@ canvas {
  }
  .color .colorselected{
     box-shadow: 0px 1px 3px 3px rgba(160,142,163,1);
+    transform: scale(1.2);
+    transition: all 0.1s;
 }
 .lines{
     position: fixed;
@@ -76,6 +84,8 @@ canvas {
 }
 .lines .lineselected{
     border-bottom-color:  black;
+    transform: scale(1.2);
+    transition: all 0.1s;
  }
  #download{
      position: fixed;

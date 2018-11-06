@@ -80,6 +80,10 @@ function bindClickEvent(){
         eraserId.classList.add("selected");
         brush.classList.remove("selected");
     }
+    deleteId.onclick = function(){
+        context.clearRect(0,0,width,height);
+
+    }
     red.onclick = function(){
         colorCurrent = "red";
         red.classList.add("colorselected");
