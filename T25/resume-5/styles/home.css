@@ -37,10 +37,6 @@ a{
     position: relative;
 
 }
-/* .topNavbar > nav > ul > li >a:hover{
-    border-bottom: 3px solid #f65a59
-} */
-
 .clearfix::after{
     content:'';
     display: block;
@@ -80,7 +76,16 @@ a{
     color:#3d4451;
 
 }
-.topNavbar > nav > ul > li.active >a::after{
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
+.topNavbar > nav > ul > li.active >a::after,
+.topNavbar > nav > ul > li.highlight >a::after{
     content: '';
     display: block;
     position: absolute;
@@ -308,17 +313,22 @@ section.skills > ol li h3{
     padding:4px 0;
     color: #3d4451;
 }
-section.skills > ol li .progressBar{
+section.skills  .progressBar{
     height:5px;
     width:100%;
     background: #FFDFDF;
     border-radius: 2px;
+    overflow: hidden;
 }
-section.skills > ol li .progress{
+section.skills  .progress{
     height:100%;
     width:80%;
     background: #FF5E62;
     border-radius: 2px;
+    transform: translateX(0); transition: all 1s;
+}
+section.skills.offset  .progress{
+    transform: translateX(-100%);
 }
 section.portfolio{
     max-width: 940px;
