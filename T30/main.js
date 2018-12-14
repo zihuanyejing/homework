@@ -9,20 +9,25 @@ for (let i =0; i<allButtons.length;i++){
             transform:"translateX("+p+"px)"
         });
         n =index;
-        allButtons.eq(n).addClass('selected').siblings('.selected').removeClass('selected');
+        activeButton(allButtons.eq(n));
     });
 }
-allButtons.eq(n%size).trigger('click').addClass('selected').siblings('.selected').removeClass('selected');
-let timeId = setInterval(function(){
-    n=n+1;
-    allButtons.eq(n%size).trigger('click').addClass('selected').siblings('.selected').removeClass('selected');
-   },1000);
+allButtons.eq(n%size).trigger('click');
+
+let timeId = setTimer();
 $(".window").on("mouseenter",function(){
     window.clearInterval(timeId);
 });
 $(".window").on("mouseleave",function(){
-    timeId = setInterval(function(){
-        n=n+1;
-        allButtons.eq(n%size).trigger('click').addClass('selected').siblings('.selected').removeClass('selected');
-       },1000);
+    timeId = setTimer();
 });
+
+function activeButton($button){
+    $button.addClass('selected').siblings('.selected').removeClass('selected');
+}
+function setTimer(){
+    return setInterval(function(){
+             n=n+1;
+             allButtons.eq(n%size).trigger('click');
+            },2000);
+}
