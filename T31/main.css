@@ -1,0 +1,51 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+*{
+    box-sizing: border-box;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+ .window{
+    width: 400px;
+    height: 355px;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  .images{
+      position: relative;
+  }
+  .images > img{
+    width: 100%;
+    transition: all 1500ms;
+    position: absolute;
+    top: 0;
+  }
+  .images > img.current{
+      left:0;
+      transform: translateX(0);
+      z-index: 1;
+  }
+  .images >img.leave{
+      transform: translateX(-100%);
+      z-index: 1;
+  }
+  .images > img.enter{
+      transform: translateX(100%);
+  }
+  .buttons{
+      text-align: center;
+  }
+ .buttons svg{
+    width:1.8em;
+    height: 1.8em;
+    transition: all 0.3s;
+}
+.buttons svg.selected{
+    transform: scale(1.2)
+}
